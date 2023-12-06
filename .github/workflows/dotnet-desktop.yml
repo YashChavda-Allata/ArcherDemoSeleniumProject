@@ -13,15 +13,13 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v5
-      with:
-        dotnet-version: 5.0.100
-
+    
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v4.0.0
+    
     - name: Restore dependencies
       run: dotnet restore
-
+      
     - name: Build
       run: dotnet build --configuration Release --no-restore
 
